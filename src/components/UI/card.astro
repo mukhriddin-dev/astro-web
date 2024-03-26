@@ -1,0 +1,34 @@
+---
+const { nimadur, yana } = Astro.props;
+
+---
+
+<script>
+  let btn = document.querySelectorAll("button");
+
+  btn?.forEach((btn) => {
+    btn?.addEventListener("click", () => {
+      console.log("first");
+    });
+  });
+
+  
+
+
+</script>
+
+<div class="border card max-w-[300px] bg-white shadow-2xl m-4">
+  <img src={`https://picsum.photos/id/52${nimadur}/300/240`} alt="smth photo" />
+  <div class="p-3">
+    <h2 class="text-md text-xl mb-4 text-indigo-700">
+      Lorem ipsum dolor sit amet consectetur. {nimadur}
+    </h2>
+    <p class="text-justify text-indigo-500">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti aperiam
+      rem suscipit officia ipsa delectus totam blanditiis tenetur, consectetur
+      corrupti, provident tempore molestiae, itaque nobis quae! Earum totam
+      reprehenderit dignissimos corporis. Aperiam.
+    </p>
+    <button>click</button>
+  </div>
+</div>
