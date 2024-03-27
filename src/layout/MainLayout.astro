@@ -1,0 +1,42 @@
+---
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import Loader from "../components/UI/loader.astro";
+import { ViewTransitions } from "astro:transitions";
+
+const { title, id } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <ViewTransitions />
+    <Header />
+    <main>
+      <section id={id}>
+        <div class="container mx-auto">
+          <slot />
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    min-height: calc(100vh - 70px - 0px);
+    background-color: #e5e5ff;
+    padding-top: 120px;
+  }
+</style>

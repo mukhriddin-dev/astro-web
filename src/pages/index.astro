@@ -1,45 +1,19 @@
 ---
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 import Card from "../components/UI/card.astro";
-import track  from "../assets/images/track.png";
+import MainLayout from "../layout/MainLayout.astro";
+import CardWrapper from "../layout/CardWrapper.astro";
 
-const data = [1, 2, 3, 4];
+const data = [1, 2, 3, 4, 5, 6];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Header />
-    <img src={track.src} alt="">
-    <main>
-      <section id="intro" class="pt-[90px]">
-        <div class="md:grid-cols-4 grid-cols-2 grid gap-4">
-          {
-            data.map((item) => {
-              return <Card nimadur={item} yana={"salom"}/>;
-            })
-          }
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<MainLayout title="Home page" id="home">
+  <CardWrapper>
+    {
+      data.map((item) => {
+        return <Card nimadur={item} yana={"salom"} />;
+      })
+    }
+  </CardWrapper>
+</MainLayout>
 
-<style>
-  main {
-    min-height: calc(100vh - 70px - 0px);
-    background-color: #e5e5ff;
-  }
-</style>
+<style></style>
